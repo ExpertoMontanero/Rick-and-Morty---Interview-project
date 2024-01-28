@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+
+h2 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  color: #000000;
+  line-height: 80px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.colored {
+  display: inline;
+  color: #00bdd4;
+  font-weight: bold;
+}
+
+
+img{
+    margin-left: -1.2em;
+}

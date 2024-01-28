@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+
+h1 {
+  font-family: lato;
+  font-weight: 700;
+  position: absolute;
+  font-family: "Lato";
+  margin-left: 2em;
+  font-size: 35px;
+  line-height: 42px;
+  color: #000000;
+}

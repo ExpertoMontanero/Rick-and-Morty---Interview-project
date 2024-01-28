@@ -3,3 +3,18 @@ body {
   background-color: #fff;
 }
 
+.main-container{
+  margin:-2.5em 12.5em;
+  display: flex;
+
+
+}
+
+.left-side{
+flex:1;
+
+}
+
+.right-side{
+flex:1;
+}
