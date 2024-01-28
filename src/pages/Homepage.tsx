@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "C:/Users/tomek/Rick and Morty/src/styles/homepage.css";
+import "/src/styles/homepage.css";
 import Header from "../components/Header";
 import LeftComponent from "../components/LeftComponent";
 import RightComponent from "../components/RightComponent";
