@@ -4,6 +4,7 @@ import { gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import "/src/styles/style_episodes_details/episodes.css";
 
@@ -26,6 +27,7 @@ const EpisodeId = () => {
   const numericChars = Object.values(params)
     .join("")
     .replace(/[^0-9]/g, "");
+
   return numericChars;
 };
 
@@ -33,7 +35,9 @@ interface EpisodeData {
   episode: {
     name: string;
     air_date: string;
+    id: number;
   };
+
 }
 
 interface EpisodeVariables {
@@ -61,7 +65,7 @@ const EpisodeDetails: React.FC = () => {
       <Header />
       <div className="main-container ">
         <div className="left-side ">
-          <BackButton />
+          <BackButton props={{ name: "Episodes" }} />
           <h2 className="title-text ">
             Characters of the{" "}
             <span className="highlight">
@@ -79,10 +83,20 @@ const EpisodeDetails: React.FC = () => {
         <div className="right-side nowrap">
           <ul>
             {episode.characters.map(
-              (character: { id: string; name: string; species: string; }) => (
+              (character: { id: string; name: string; species: string }) => (
                 <li key={character.id} className="character-info">
-                  <div className="character-name"
-                  style={character.id % 2 == 1 ? { color: "#00BDD4" } : { color: "#BDD800" }} > {character.name}</div>
+                  <Link
+                    to={`/CharacterDetails/${character.id}`}
+                    className="character-name"
+                    style={
+                      character.id % 2 == 1
+                        ? { color: "#00BDD4" }
+                        : { color: "#BDD800" }
+                    }
+                  >
+                    {" "}
+                    {character.name}
+                  </Link>
                   <div className="character-species"> {character.species}</div>
                 </li>
               )

@@ -25,14 +25,14 @@
 /* right side */
 
 .right-side {
-  margin-top: 2.4em;
+  margin-top: 2em;
 }
 ul {
   list-style-type: none;
 }
 .character-name {
   font-family: lato;
-  margin-top: 1.5em;
+ line-height: 3.5em;
   font-size: 25px;
   font-weight: 700;
 }
@@ -41,6 +41,6 @@ ul {
   font-family: lato;
   font-size: 20px;
   font-weight: 700;
-  margin-top: 0.8em;
+  margin-top: -0.35em;
   color: #959595;
 }

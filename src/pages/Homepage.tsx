@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "/src/styles/homepage.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";

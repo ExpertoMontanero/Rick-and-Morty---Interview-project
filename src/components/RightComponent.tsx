@@ -1,8 +1,5 @@
 import "../styles/rightComponent.css";
 import { useState } from "react";
-import React from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
@@ -21,17 +18,22 @@ export default function RightComponent() {
   `;
 
   function DisplayEpisodes() {
-   
     const [selectedEpisodeId, setSelectedEpisodeId] = useState(null);
     const getEpisodeId = (id: string | number) => {
       setSelectedEpisodeId(id);
     };
+
     const { loading, error, data } = useQuery(GET_EPISODES);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
 
     return data.episodes.results.map(({ episode, name, air_date, id }) => (
-      <Link to={`/EpisodeDetails/${id}` }onClick={() => getEpisodeId(id)} key={id} className="main-box">
+      <Link
+        to={`/EpisodeDetails/${id}`}
+        onClick={() => getEpisodeId(id)}
+        key={id}
+        className="main-box"
+      >
         <div className="episode-box">
           <h2 className="episode-name">{episode}</h2>
         </div>
