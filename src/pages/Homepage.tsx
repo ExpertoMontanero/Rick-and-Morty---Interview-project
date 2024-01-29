@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "/src/styles/homepage.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import LeftComponent from "../components/LeftComponent";
 import RightComponent from "../components/RightComponent";
 
@@ -17,6 +18,7 @@ function Homepage() {
         </div>
       </div>
       <Link to="/characters">Characters</Link>
+      <Footer/>
     </div>
   );
 }

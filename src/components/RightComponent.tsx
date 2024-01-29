@@ -12,6 +12,7 @@ export default function RightComponent() {
           episode
           name
           air_date
+          id
         }
       }
     }
@@ -22,19 +23,26 @@ export default function RightComponent() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
 
-    return data.episodes.results.map(({ episode, name, air_date }) => (
-      <div key={episode}>
-        <h3>{name}</h3>
-        <h3>{air_date}</h3>
-        <br />
-        <b>About this location:</b>
-        <p>{episode}</p>
-        <br />
+    return data.episodes.results.map(({ episode, name, air_date, id }) => (
+      <div key={id} className="main-box">
+        <div className="episode-box">
+          <h2 className="episode-name">{episode}</h2>
+        </div>
+        <div className="vl"></div>
+        <div className="title-air-box">
+          <h1
+            className="episod-title"
+            style={id % 2 == 0 ? { color: "#00BDD4" } : { color: "#BDD800" }}
+          >
+            {name}
+          </h1>
+          <h3 className="air-date">{air_date}</h3>
+        </div>
       </div>
     ));
   }
   return (
-    <div>
+    <div className="list-box">
       <DisplayEpisodes />
     </div>
   );

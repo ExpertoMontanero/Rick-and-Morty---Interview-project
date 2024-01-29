@@ -1,10 +1,9 @@
 import "../styles/header.css";
 
-function Header(){
+function Header() {
   return (
     <header>
-     
-      <h1>LOREM IPSUM</h1>
+      <p className="header-label">LOREM IPSUM</p>
       <svg
         width="100%"
         height="190"
@@ -18,9 +17,7 @@ function Header(){
         <path d="M1920 0H981V95H1920V0Z" fill="#00BDD4" />
         <path d="M981 0H1039.1L980 95V0Z" fill="#DAED49" />
       </svg>
-     
     </header>
-    
   );
 }
 

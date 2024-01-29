@@ -1,3 +1,54 @@
-.background {
-  background-color: green;
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+
+/* boxes */
+.list-box {
+  margin-top: 3.6em;
+  margin-left: 5.3em;
+}
+.main-box {
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+}
+
+.title-air-box {
+  margin-left: 3.9em;
+  display: grid;
+}
+
+.vl {
+  position: absolute;
+  height: 110px;
+  left: 17.9%;
+  background: #000000;
+  border: 1px solid #d1d1d1;
+}
+
+/* text */
+
+.episode-name {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.episod-title {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  color: #00bdd4;
+}
+
+.air-date {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #959595;
+  margin-top: 0em;
 }
