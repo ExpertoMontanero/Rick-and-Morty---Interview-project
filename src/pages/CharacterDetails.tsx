@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BackButton from "../components/BackButton";
-
+import "/src/styles/style_characters/characters.css";
 
 const GET_CHARACTER = gql`
   query GetCharacter($characterId: ID!) {
@@ -76,30 +76,43 @@ const CharacterDetails: React.FC = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="main-container ">
         <div className="left-side ">
           <BackButton props={{ name: "Characters" }} />
-          <h2 className="title-text ">
-            Details of <span className="highlight">{character.name}</span>
-          </h2>
+          <h1 className="character-name-details">{character.name}</h1>
           <img
             src={character.image}
             alt={character.name}
-            className="theme-img"
+            className="character-img"
           />
         </div>
         <div className="right-side nowrap">
-          <ul>
-            <li className="character-info">
-              <div className="character-name">{character.name}</div>
-              <div className="character-status">{character.status}</div>
-              <div className="character-species">{character.species}</div>
-              <div className="character-type">{character.type}</div>
-              <div className="character-gender">{character.gender}</div>
-              <div className="character-origin">{character.origin.name}</div>
-              <div className="character-location">
-                {character.location.name}
-              </div>
+          <ul className="character-info">
+            <li id="item1" className="item-d">
+              {`${character.status === "" ? "-" : character.status}`}
+              <p className="description">Status</p>
+            </li>
+            <li id="item2" className="item-d">
+              {`${character.species === "" ? "-" : character.species}`}
+              <p className="description">Species</p>
+            </li>
+            <li id="item3" className="item-d">
+              {`${character.type === "" ? "-" : character.type}`}
+              <p className="description">Type</p>
+            </li>
+            <li id="item4" className="item-d">
+              {`${character.gender === "" ? "-" : character.gender}`}
+              <p className="description">Gender</p>
+            </li>
+            <li id="item5" className="item-d">
+              {`${character.origin.name === "" ? "-" : character.origin.name}`}
+              <p className="description">Origin</p>
+            </li>
+            <li id="item6" className="item-d">
+              {`${
+                character.location.name === "" ? "-" : character.location.name
+              }`}
+              <p className="description">Last known location</p>
             </li>
           </ul>
         </div>

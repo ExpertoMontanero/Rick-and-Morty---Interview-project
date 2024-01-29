@@ -37,7 +37,6 @@ interface EpisodeData {
     air_date: string;
     id: number;
   };
-
 }
 
 interface EpisodeVariables {
@@ -83,13 +82,16 @@ const EpisodeDetails: React.FC = () => {
         <div className="right-side nowrap">
           <ul>
             {episode.characters.map(
-              (character: { id: string; name: string; species: string }) => (
+              (
+                character: { id: string; name: string; species: string },
+                index: number
+              ) => (
                 <li key={character.id} className="character-info">
                   <Link
                     to={`/CharacterDetails/${character.id}`}
                     className="character-name"
                     style={
-                      character.id % 2 == 1
+                      index % 2 == 1
                         ? { color: "#00BDD4" }
                         : { color: "#BDD800" }
                     }

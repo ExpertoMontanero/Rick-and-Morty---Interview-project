@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+
+.left-side {
+  margin-right: 6em;
+  min-width: 40em;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.character-img {
+  margin-top: 6em;
+  aspect-ratio: 1;
+  width: 92%;
+}
+/* right side */
+
+.right-side {
+  margin-top: 2em;
+}
+ul {
+  list-style-type: none;
+}
+.character-name-details {
+  font-family: lato;
+  font-weight: 700;
+  font-size: 4.3em;
+  line-height: 2.25em;
+  letter-spacing: 0.8px;
+  margin-left: 1.35em;
+  color: #00bdd4;
+}
+
+.character-species {
+  font-family: lato;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: -0.35em;
+  color: #959595;
+}
+
+.item-d:nth-child(even) {
+  color: #bdd800;
+}
+
+/* Apply blue color for odd index */
+.item-d:nth-child(odd) {
+  color: #00bdd4;
+}
+
+.description {
+  color: #959595;
+  font-size: 0.8em;
+  
+}
+
+
+
+.item-d {
+  font-family: lato;
+  font-size: 1.55em;
+  font-weight: 700;
+  line-height: 1em;
+  margin-top: 1.6em;
+}
