@@ -52,3 +52,7 @@
   color: #959595;
   margin-top: 0em;
 }
+
+a:link { 
+  text-decoration: none; 
+} 

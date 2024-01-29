@@ -17,7 +17,6 @@ function Homepage() {
           <RightComponent />
         </div>
       </div>
-      <Link to="/characters">Characters</Link>
       <Footer/>
     </div>
   );
