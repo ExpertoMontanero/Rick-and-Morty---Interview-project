@@ -1,6 +1,6 @@
 import "../styles/header.css";
 
-function Header() {
+export default function Header() {
   return (
     <header>
       <p className="header-label">LOREM IPSUM</p>
@@ -21,4 +21,4 @@ function Header() {
   );
 }
 
-export default Header;
+

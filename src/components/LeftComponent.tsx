@@ -1,9 +1,9 @@
 import "../styles/leftComponent.css";
 
-function LeftComponent() {
+export default function LeftComponent() {
   return (
     <div>
-      <h2>
+      <h2 className="title-text">
         Episodes of the <span className="highlight"> 4th</span> season of the
         series{" "}
         <span className="colored">
@@ -15,5 +15,3 @@ function LeftComponent() {
     </div>
   );
 }
-
-export default LeftComponent;

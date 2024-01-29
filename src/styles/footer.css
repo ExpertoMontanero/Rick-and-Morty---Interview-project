@@ -2,7 +2,6 @@
 
 .footer {
   font-family: lato;
-  
   position: absolute;
   height: 80px;
   width: 100%;
@@ -10,13 +9,11 @@
   background: #464646;
   display: flex;
   justify-content: center;
-
 }
 
-.footer-text{
+.footer-text {
   margin-top: 1.6em;
   font-size: 16px;
-
   font-weight: 600;
-  color: #CCCCCC;
+  color: #cccccc;
 }

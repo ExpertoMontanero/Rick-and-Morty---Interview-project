@@ -1,6 +1,6 @@
 import "../styles/footer.css";
 
-function Footer(){
+export default function Footer(){
   return (
     <footer className="footer">
       <p className="footer-text">LOREM IPSUM ©2021</p>
@@ -9,4 +9,4 @@ function Footer(){
   );
 }
 
-export default Footer;
+
