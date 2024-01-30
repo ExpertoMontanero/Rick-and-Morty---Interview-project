@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import "/src/styles/style_episodes_details/episodes.css";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const GET_EPISODE = gql`
   query GetEpisode($episodeId: ID!) {
@@ -44,6 +46,19 @@ interface EpisodeVariables {
 }
 
 const EpisodeDetails: React.FC = () => {
+  const [isResolutionAbove1000, setIsResolutionAbove1000] = useState<boolean>(
+    window.innerWidth > 1000
+  );
+  const handleResize = () => {
+    setIsResolutionAbove1000(window.innerWidth > 1000);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const episodeId = EpisodeId();
 
   const { loading, error, data } = useQuery<EpisodeData, EpisodeVariables>(
@@ -62,10 +77,10 @@ const EpisodeDetails: React.FC = () => {
   return (
     <div>
       <Header />
-      <div className="main-container ">
-        <div className="left-side ">
+      <div className="main-container container-e">
+        <div className={isResolutionAbove1000 ? "left-side" : " "}>
           <BackButton props={{ name: "Episodes" }} />
-          <h2 className="title-text ">
+          <h2 className="title-text title-text-ep ">
             Characters of the{" "}
             <span className="highlight">
               {EpisodeNumber === 1
@@ -79,17 +94,20 @@ const EpisodeDetails: React.FC = () => {
           </h2>
           <img src="\src\images\image.png" className="theme-img"></img>
         </div>
-        <div className="right-side nowrap">
+        <div className="right-side right-side-ep nowrap">
           <ul>
             {episode.characters.map(
               (
                 character: { id: string; name: string; species: string },
                 index: number
               ) => (
-                <li key={character.id} className="character-info">
+                <li
+                  key={character.id}
+                  className="character-info character-info-ep"
+                >
                   <Link
                     to={`/CharacterDetails/${character.id}`}
-                    className="character-name"
+                    className="character-name character-name-ep"
                     style={
                       index % 2 == 1
                         ? { color: "#00BDD4" }
@@ -99,7 +117,12 @@ const EpisodeDetails: React.FC = () => {
                     {" "}
                     {character.name}
                   </Link>
-                  <div className="character-species"> {character.species}</div>
+                 
+                  <div className="character-species character-species-ep">
+                    {" "}
+                    {character.species}
+                  </div>
+                  <hr className="hl"></hr>
                 </li>
               )
             )}

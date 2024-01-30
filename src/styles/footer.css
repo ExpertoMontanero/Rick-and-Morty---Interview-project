@@ -2,18 +2,29 @@
 
 .footer {
   font-family: lato;
-  position: absolute;
   height: 80px;
   width: 100%;
-  margin-top: 10em;
+  top: 0; /* You can adjust this value to determine when the element becomes sticky */
+  margin-top: 19.6em;
+  position: sticky;
   background: #464646;
   display: flex;
   justify-content: center;
 }
 
 .footer-text {
-  margin-top: 1.6em;
+  margin-top: 1.2em;
   font-size: 16px;
   font-weight: 600;
   color: #cccccc;
+}
+@media screen and (max-width: 1000px) {
+  .footer {
+    height: 50px;
+    margin-top: 2em;
+  }
+
+  .footer-text {
+    font-size: 0.9em;
+  }
 }

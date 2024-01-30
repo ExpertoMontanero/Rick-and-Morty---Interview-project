@@ -4,9 +4,10 @@
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 70px;
+  font-size: 4.375rem;
   color: #000000;
-  line-height: 70px;
+  line-height: 4.563rem;
+  letter-spacing: 1px;
 }
 
 .highlight {
@@ -19,7 +20,24 @@
   font-weight: bold;
 }
 
+.image-main {
+  margin-left: -1.2em;
+  margin-top: 1.5em;
+}
 
-img{
-    margin-left: -1.2em;
+@media screen and (max-width: 1000px) {
+  .title-text {
+    font-size: 2.45em;
+    line-height: 1.09em;
+    letter-spacing: 0;
+  }
+  .image-main {
+    width: 20em;
+    margin-top: 0.2em;
+    margin-left: 1.2em;
+  }
+  .left-side-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

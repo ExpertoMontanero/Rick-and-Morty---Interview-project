@@ -14,25 +14,31 @@
   margin-right: 6em;
   min-width: 40em;
 }
-
+.hl {
+  width: 0;
+}
 .nowrap {
   white-space: nowrap;
 }
 
-.theme-img{
-    margin-top: 1.4em;
+.theme-img {
+  margin-top: 1.4em;
 }
 /* right side */
 
 .right-side {
   margin-top: 2em;
 }
+.right-side-ep {
+  margin-right: -4.5em;
+}
 ul {
   list-style-type: none;
+  margin-left: -2.5em;
 }
 .character-name {
   font-family: lato;
- line-height: 3.5em;
+  line-height: 3.5em;
   font-size: 25px;
   font-weight: 700;
 }
@@ -43,4 +49,45 @@ ul {
   font-weight: 700;
   margin-top: -0.35em;
   color: #959595;
+  margin-top: -1.3em;
+}
+
+@media screen and (max-width: 1000px) {
+  .theme-img {
+    width: 20em;
+    margin-top: 0.4em;
+    margin-left: 1em;
+  }
+  .container-e {
+    margin-top: 3.75em;
+  }
+  .right-side-ep {
+    margin-right: 0em;
+  }
+  .title-text-ep {
+    font-size: 2.4em;
+  }
+  .character-name-ep {
+    line-height: 3.5em;
+    font-size: 1.15em;
+    font-weight: 700;
+  }
+
+  .character-species-ep {
+    font-size: 0.95em;
+    font-weight: 700;
+    margin-top: -0.4em;
+  
+  }
+  .character-info-ep {
+    margin-left: -0.2em;
+    margin-top: 2.8em;
+  }
+  .hl {
+    width: 100%;
+    margin-top:1.1em ;
+    margin-bottom: -3em;
+    background: #000000;
+  border: 1px solid #d1d1d1;
+  }
 }

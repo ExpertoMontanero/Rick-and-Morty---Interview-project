@@ -7,7 +7,36 @@
   font-family: "Lato";
   margin-left: 1.9em;
   margin-top: 0.7em;
-  font-size: 35px;
+  font-size: 2.188em;
   line-height: 42px;
   color: #000000;
+}
+
+.header-svg {
+  display: none; /* Initially hide the SVG for all screen sizes */
+
+  /* Media query to display the SVG when screen width is above 1000 pixels */
+  @media (min-width: 1001px) {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header-label {
+    margin-top: 1em;
+    margin-right: 1.2em;
+    font-size: 1.9em;
+  }
+}
+.header-mobile {
+  display: none;
+
+  @media (max-width: 1000px) {
+    display: block;
+    height: 4.45em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #daed49;
+  }
 }

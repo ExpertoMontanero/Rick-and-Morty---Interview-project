@@ -76,17 +76,17 @@ const CharacterDetails: React.FC = () => {
   return (
     <div>
       <Header />
-      <div className="main-container ">
-        <div className="left-side ">
+      <div className="main-container main-container-ch ">
+        <div className="left-side">
           <BackButton props={{ name: "Characters" }} />
           <h1 className="character-name-details">{character.name}</h1>
           <img
             src={character.image}
             alt={character.name}
-            className="character-img"
+            className="character-img img-ch"
           />
         </div>
-        <div className="right-side nowrap">
+        <div className="right-side right-side-ch nowrap">
           <ul className="character-info">
             <li id="item1" className="item-d">
               {`${character.status === "" ? "-" : character.status}`}

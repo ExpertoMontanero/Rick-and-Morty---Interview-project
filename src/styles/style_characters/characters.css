@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
-.left-side {
-  margin-right: 6em;
-  min-width: 40em;
-}
-
 .nowrap {
   white-space: nowrap;
 }
@@ -12,7 +7,13 @@
 .character-img {
   margin-top: 6em;
   aspect-ratio: 1;
-  width: 92%;
+  margin-left: -1.5em;
+  width: 98%;
+}
+
+.right-side-ch{
+
+  margin-left: 5em;
 }
 /* right side */
 
@@ -32,13 +33,7 @@ ul {
   color: #00bdd4;
 }
 
-.character-species {
-  font-family: lato;
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: -0.35em;
-  color: #959595;
-}
+
 
 .item-d:nth-child(even) {
   color: #bdd800;
@@ -52,10 +47,7 @@ ul {
 .description {
   color: #959595;
   font-size: 0.8em;
-  
 }
-
-
 
 .item-d {
   font-family: lato;

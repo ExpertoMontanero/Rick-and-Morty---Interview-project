@@ -6,11 +6,20 @@
   height: 50px;
   border-radius: 8px;
   border: none;
-  font-size: 30px;
+  font-size: 1.875rem;
   background-color: #2dcee3;
 }
 
 .back-button:hover {
   background-color: #00bdd4;
   cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .back-button {
+    top: 4.8em;
+    left: 1.3em;
+    width: 6.3em;
+    height: 1.9em;
+    font-size: 1.3em;
+  }
 }
