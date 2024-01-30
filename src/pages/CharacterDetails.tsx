@@ -6,7 +6,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BackButton from "../components/BackButton";
 import "/src/styles/style_characters/characters.css";
-
+import { useState } from "react";
+import { useEffect } from "react";
 const GET_CHARACTER = gql`
   query GetCharacter($characterId: ID!) {
     character(id: $characterId) {
@@ -58,6 +59,19 @@ interface CharacterVariables {
 }
 
 const CharacterDetails: React.FC = () => {
+  const [isResolutionAbove1000, setIsResolutionAbove1000] = useState<boolean>(
+    window.innerWidth > 1000
+  );
+  const handleResize = () => {
+    setIsResolutionAbove1000(window.innerWidth > 1000);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const characterId = CharacterId();
 
   const { loading, error, data } = useQuery<CharacterData, CharacterVariables>(
@@ -77,7 +91,7 @@ const CharacterDetails: React.FC = () => {
     <div>
       <Header />
       <div className="main-container main-container-ch ">
-        <div className="left-side">
+        <div className={isResolutionAbove1000 ? "left-side" : " "}>
           <BackButton props={{ name: "Characters" }} />
           <h1 className="character-name-details">{character.name}</h1>
           <img
@@ -87,32 +101,38 @@ const CharacterDetails: React.FC = () => {
           />
         </div>
         <div className="right-side right-side-ch nowrap">
-          <ul className="character-info">
+          <ul className="character-info character-info-ch">
             <li id="item1" className="item-d">
               {`${character.status === "" ? "-" : character.status}`}
               <p className="description">Status</p>
+              <hr className="hl"></hr>
             </li>
             <li id="item2" className="item-d">
               {`${character.species === "" ? "-" : character.species}`}
               <p className="description">Species</p>
+              <hr className="hl"></hr>
             </li>
             <li id="item3" className="item-d">
               {`${character.type === "" ? "-" : character.type}`}
               <p className="description">Type</p>
+              <hr className="hl"></hr>
             </li>
             <li id="item4" className="item-d">
               {`${character.gender === "" ? "-" : character.gender}`}
               <p className="description">Gender</p>
+              <hr className="hl"></hr>
             </li>
             <li id="item5" className="item-d">
               {`${character.origin.name === "" ? "-" : character.origin.name}`}
               <p className="description">Origin</p>
+              <hr className="hl"></hr>
             </li>
             <li id="item6" className="item-d">
               {`${
                 character.location.name === "" ? "-" : character.location.name
               }`}
               <p className="description">Last known location</p>
+              <hr className="hl"></hr>
             </li>
           </ul>
         </div>
